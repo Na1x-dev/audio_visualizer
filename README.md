@@ -2,6 +2,26 @@
 
 A client-side audio visualizer built with vanilla HTML, CSS and JavaScript. Designed for GitHub Pages — no build step, backend, or account required.
 
+## Project structure
+
+```text
+audio_visualizer/
+├── index.html          # Page markup and UI structure
+├── css/
+│   └── styles.css      # Theme, layout, responsive styles
+├── js/
+│   └── app.js          # Audio analysis, effects, controls and export
+├── .github/
+│   └── workflows/
+│       └── pages.yml   # GitHub Pages deployment workflow
+└── README.md
+```
+
+Keep responsibilities separate when extending the project:
+- **HTML** — add or rearrange interface elements in `index.html`.
+- **CSS** — change appearance and responsive behavior in `css/styles.css`.
+- **JavaScript** — update visualizer behavior and interactions in `js/app.js`.
+
 ## Features
 
 - Spectrum bars, waveform, radial spectrum, pulsing dots, full-canvas fireflies, cyberpunk grid and neon ring.
@@ -12,14 +32,16 @@ A client-side audio visualizer built with vanilla HTML, CSS and JavaScript. Desi
 
 ## Run locally
 
-Open `index.html` in a modern browser, or serve the folder with any static HTTP server.
+Open `index.html` in a modern browser, or serve the folder with any static HTTP server. For example, with Python installed, run `python -m http.server` from the project directory and open `http://localhost:8000`.
 
 ## Publish with GitHub Pages
 
+The repository includes a GitHub Actions workflow at `.github/workflows/pages.yml`.
+
 1. Open **Settings → Pages** in this repository.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Choose branch **main** and folder **/(root)**, then save.
-4. Wait for the deployment status/link to appear.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Open the **Actions** tab and wait for the Pages workflow to complete successfully.
+4. The site should then be available at https://na1x-dev.github.io/audio_visualizer/.
 
 ## Export notes
 
